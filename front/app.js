@@ -1,10 +1,11 @@
-
+ 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 import $ from 'jquery';
 
 //Components
+import './app.css';
 import Posts from './posts/Posts.jsx';
 import PostPage from './post-page/PostPage.jsx';
 import CreatePost from './create-post/CreatePost.jsx';
@@ -26,19 +27,18 @@ const App = React.createClass({
   },
   render: function() {
     return (
-      <div style={appStyles}>
-        <Posts posts={this.state.posts}/>
-        {/*<Comment />  */}
-        {this.props.children}
+      <div>
+
+        <div className="all-posts">
+          <Posts posts={this.state.posts}/>
+          {this.props.children}
+        </div>
+
       </div>
     );
   }
 
 });
-
-const appStyles = {
-  backgroundColor: 'azure'
-}
 
 ReactDOM.render(
   <Router history={browserHistory}>

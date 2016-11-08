@@ -5,7 +5,7 @@ const Posts = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Posts:</h1>
+        <h2>Featured Posts</h2>
         {this.props.posts.map((post, indx) => <Post key={indx} post={post} />)}
       </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router';
+import '../app.css';
 
 const CreatePost = React.createClass({
   getInitialState() {
@@ -33,16 +34,21 @@ const CreatePost = React.createClass({
   render(){
     return (
       <form>
-        <h1>Submit a post:</h1>
-        <label>Title: </label>
-        <input onChange={this.handleChange.bind(this, 'title')} type="text" name="title" />
+      <br/>
+        <h1>Contribute to Metal Fanatics!</h1>
+        <label className="label">Title</label>
         <br/>
         <br/>
-        <label>Body: </label>
-        <input onChange={this.handleChange.bind(this, 'body')} type="text" name="body" />
+        <input className="postTitle" onChange={this.handleChange.bind(this, 'title')} type="text" name="title" />
         <br/>
         <br/>
-        <Link to="/"><input onClick={this.submitNewPost} type="button" value="Submit" /></Link>
+        <label className="label">Body</label>
+        <br/>
+        <br/>
+        <input className="textArea" onChange={this.handleChange.bind(this, 'body')} type="text" name="body" placeholder="Let the metal flow..."/>
+        <br/>
+        <br/>
+        <Link to="/"><input className="submitButton" onClick={this.submitNewPost} type="button" value="Submit" /></Link>
       </form>
     )
   }
